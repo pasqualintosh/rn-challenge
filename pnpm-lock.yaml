@@ -91,6 +91,9 @@ devDependencies:
   prettier:
     specifier: 2.8.8
     version: 2.8.8
+  react-native-dotenv:
+    specifier: ^3.4.10
+    version: 3.4.10(@babel/runtime@7.20.0)
   typescript:
     specifier: 5.0.4
     version: 5.0.4
@@ -3224,6 +3227,11 @@ packages:
     dependencies:
       esutils: 2.0.3
 
+  /dotenv@16.4.4:
+    resolution: {integrity: sha512-XvPXc8XAQThSjAbY6cQ/9PcBXmFoWuw1sQ3b8HqUCR6ziGXjkTi//kB9SWa2UwqlgdAIuRqAa/9hVljzPehbYg==}
+    engines: {node: '>=12'}
+    dev: true
+
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: false
@@ -5627,6 +5635,15 @@ packages:
 
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+
+  /react-native-dotenv@3.4.10(@babel/runtime@7.20.0):
+    resolution: {integrity: sha512-GADCAx3qJ9pjnRYMzQVliTnQto5W+38qoQyZGvo4snTv08cT/EQ7/2iyuwVPd/jms1rzVSra5QC/F+lbNWOAKQ==}
+    peerDependencies:
+      '@babel/runtime': ^7.20.6
+    dependencies:
+      '@babel/runtime': 7.20.0
+      dotenv: 16.4.4
+    dev: true
 
   /react-native-pager-view@6.2.3(react-native@0.73.4)(react@18.2.0):
     resolution: {integrity: sha512-dqVpXWFtPNfD3D2QQQr8BP+ullS5MhjRJuF8Z/qml4QTILcrWaW8F5iAxKkQR3Jl0ikcEryG/+SQlNcwlo0Ggg==}
