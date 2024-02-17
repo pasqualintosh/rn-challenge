@@ -1,19 +1,19 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { ApiProvider } from '@reduxjs/toolkit/query/react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import Home from './home/layout';
 import List from './list/layout';
-import { api } from '../../api-client';
 import { SafeArea } from '../../components';
-import { ListsProvider } from '../../context/lists';
+import { persistor, store } from '../../store';
 
 const Tab = createBottomTabNavigator();
 
 function Layout() {
   return (
-    <ApiProvider api={api}>
-      <ListsProvider>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
         <NavigationContainer>
           <SafeArea>
             <Tab.Navigator screenOptions={{ headerShown: false }}>
@@ -22,8 +22,8 @@ function Layout() {
             </Tab.Navigator>
           </SafeArea>
         </NavigationContainer>
-      </ListsProvider>
-    </ApiProvider>
+      </PersistGate>
+    </Provider>
   );
 }
 

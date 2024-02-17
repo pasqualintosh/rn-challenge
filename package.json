@@ -6,9 +6,10 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start --reset-cache",
-    "pods": "pod-install ios"
+    "pods": "cd ios && pod install && cd .."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.22.0",
     "@react-navigation/bottom-tabs": "^6.5.12",
     "@react-navigation/material-top-tabs": "^6.6.6",
     "@react-navigation/native": "^6.1.10",
@@ -25,6 +26,8 @@
     "react-native-tab-view": "^3.5.2",
     "react-native-webview": "^13.8.1",
     "react-redux": "^9.1.0",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
     "tailwindcss": "3.3.2"
   },
   "devDependencies": {

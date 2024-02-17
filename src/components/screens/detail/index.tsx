@@ -9,10 +9,12 @@ import {
   WatchButton,
 } from './styled';
 import { IDetailScreenProps } from './types';
-import { useListsContext } from '../../../context/lists';
+import useFavList from '../../../hooks/use-favlist';
+import useWatchList from '../../../hooks/use-watchlist';
 
 function DetailScreen({ movie }: IDetailScreenProps) {
-  const { isInFavList, isInWatchList, updateFavList, updateWatchList } = useListsContext();
+  const { isInFavList, updateFavList } = useFavList();
+  const { isInWatchList, updateWatchList } = useWatchList();
 
   const addOrRemoveFav = isInFavList?.(movie) ? 'Add' : 'Remove';
   const addOrRemoveWatch = isInWatchList?.(movie) ? 'Add' : 'Remove';
