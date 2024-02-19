@@ -1,5 +1,4 @@
 import { isEqual } from 'lodash';
-import { useEffect } from 'react';
 
 import { Movie } from '../api-client/models/get-movie-list';
 import { useAppDispatch, useAppSelector } from '../store/redux-hooks';
@@ -24,7 +23,7 @@ export default function useFavList() {
   };
 
   const isInFavList = (movie: Movie): boolean =>
-    isEqual(
+    !isEqual(
       favList.findIndex((fav) => fav.id === movie.id),
       -1
     );

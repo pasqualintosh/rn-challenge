@@ -16,8 +16,8 @@ function DetailScreen({ movie }: IDetailScreenProps) {
   const { isInFavList, updateFavList } = useFavList();
   const { isInWatchList, updateWatchList } = useWatchList();
 
-  const addOrRemoveFav = isInFavList?.(movie) ? 'Add' : 'Remove';
-  const addOrRemoveWatch = isInWatchList?.(movie) ? 'Add' : 'Remove';
+  const addOrRemoveFav = !isInFavList?.(movie) ? 'Add' : 'Remove';
+  const addOrRemoveWatch = !isInWatchList?.(movie) ? 'Add' : 'Remove';
 
   const handleFavPress = () => updateFavList?.(movie);
   const handleWatchPress = () => updateWatchList?.(movie);

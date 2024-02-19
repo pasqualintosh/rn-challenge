@@ -23,7 +23,7 @@ export default function useWatchList() {
   };
 
   const isInWatchList = (movie: Movie): boolean =>
-    isEqual(
+    !isEqual(
       watchList.findIndex((watch) => watch.id === movie.id),
       -1
     );
